@@ -1,0 +1,46 @@
+{% from "base.html" import render_css, render_js, render_navbar %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{ render_css(render) }}
+    <title>myCheff</title>
+  </head>
+
+  <body id="body">
+    <section class="top">
+      {{ render_navbar(render) }}
+      <section id="top-part">
+        <div class="content-1">
+          <h1 class="display-1">
+            Find a professional <span class="yellow">chef</span> <br />
+            nearby.
+          </h1>
+          <h5>Find and order chefs close to you at your conveinience...</h5>
+          <a type="button" href="chefs.html" class="normal-btn">Get started </a>
+        </div>
+        <div class="content-2">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <i class="bi bi-laptop"></i>
+                Order a Chef
+              </div>
+              <div class="col-sm">
+                <i class="bi bi-geo-alt"></i>
+                Pick the nearest
+              </div>
+              <div class="col-sm">
+                <i class="bi bi-truck"></i>
+                Get a chef delivered to you
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </body>
+  {{ render_js(render) }}
+</html>

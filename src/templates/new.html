@@ -1,0 +1,25 @@
+    <div class="row">
+      <form action="{{url_for('chefs.services')}}" method="post">
+        <input type="text" name="city" id="city" required placeholder="city" />
+
+        <button type="submit">search</button>
+      </form>
+      {% for cheffservice in cheffservice.items %}
+      <div class="col-md ml-2 mr-2">
+        <div class="card card-product"> 
+          <img src="" alt="product image" />
+          <div class="card-body">
+            <h1>
+              cheff name: {{cheffservice.cheffservice.firstname}}
+              {{cheffservice.cheffservice.lastname}}
+            </h1>
+            <h5 class="text-center">user id: {{cheffservice.posted_by_id}}</h5>
+            <p>service id: {{cheffservice.id}}</p>
+            <p>price: &#x20A6;{{cheffservice.cheff_price}}</p>
+            <p>description: {{cheffservice.cheff_description}}</p>
+            <p>city: {{cheffservice.city}}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>

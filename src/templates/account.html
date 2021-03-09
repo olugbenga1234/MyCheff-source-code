@@ -1,0 +1,144 @@
+{% from "base.html" import render_css, render_js, render_navbar %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{ render_css(render) }}
+    <title>Account</title>
+  </head>
+
+  <body>
+    {{ render_navbar(render) }}
+    <section id="setup">
+      <div class="account-page">
+        <div class="container-md">
+          <!-- <div class="col"> -->
+            <!-- <div class="col-md-2">
+            <img src="../static/images/bg2.jpg" alt="" width="100%">
+            
+          </div> -->
+            <div class="col align-self-center">
+              <div class="">
+                <div class="form-btn">
+                  <span onclick="login()">Login</span>
+                  <span onclick="register()">Register</span>
+                  <hr id="Indicator" />
+                </div>
+                <!--login form-->
+                <form
+                  id="LoginForm"
+                  action="{{ url_for('auth.login') }}"
+                  method="post"
+                >
+                  <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="username"
+                    required
+                  />
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="password"
+                    required
+                  />
+                  <button class="fresh-btn ba" type="submit">Login</button>
+                </form>
+
+                <!--register form-->
+                <form
+                  id="RegisterForm"
+                  action="{{ url_for('auth.register') }}"
+                  method="post"
+                >
+                  <h1 class="mb-5">
+                    Create a new <br /><span class="yellow">Account</span>
+                  </h1>
+                  <input
+                    type="text"
+                    name="firstname"
+                    id="firstname"
+                    placeholder="firstname"
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="lastname"
+                    id="lastname"
+                    placeholder="lastname"
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="username"
+                    required
+                  />
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="password"
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="location"
+                    id="location"
+                    placeholder="location"
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="city"
+                    id="city"
+                    placeholder="city"
+                    required
+                  />
+                  <select
+                    class="custom-select form-control"
+                    name="usertype"
+                    id="usertype"
+                    required
+                  >
+                    <option selected disabled value="">Choose...</option>
+                    <option value="chef" required>chef</option>
+                    <option value="user" required>user</option>
+                  </select>
+
+                  <button class="fresh-btn ba" type="submit">register</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--script for login form-->
+    <script>
+      var LoginForm = document.getElementById("LoginForm");
+      var RegisterForm = document.getElementById("RegisterForm");
+      var Indicator = document.getElementById("Indicator");
+
+      function register() {
+        RegisterForm.style.transform = "translateX(0px)";
+        LoginForm.style.transform = "translateX(0px)";
+        Indicator.style.transform = "translateX(100px)";
+      }
+
+      function login() {
+        RegisterForm.style.transform = "translateX(400px)";
+        LoginForm.style.transform = "translateX(400px)";
+        Indicator.style.transform = "translateX(0px)";
+      }
+    </script>
+
+    {{ render_js(render) }}
+  </body>
+</html>

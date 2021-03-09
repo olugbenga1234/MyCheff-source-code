@@ -1,0 +1,55 @@
+{% from "base.html" import render_css, render_js, render_navbar %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{ render_css(render) }}
+    <title>Login</title>
+  </head>
+
+  <!-- <div class="col"> -->
+  <!-- <div class="col-md-2">
+            <img src="../static/images/bg2.jpg" alt="" width="100%">
+            
+          </div> -->
+
+  <body id="body">
+  <section class="top">
+    {{ render_navbar(render) }}
+    <section id="setup">
+      <div class="form-container container mt-5">
+          <h1 class="mb-3">Welcome <br> to My<span class="yellow">Cheff</span></h1>
+        <div class="row md">
+          <div class="col align-self-center">
+            <form action="{{ url_for('auth.login') }}" method="post">
+              <input
+                class="form-control"
+                type="text"
+                name="username"
+                id="username"
+                placeholder="username"
+                required
+              />
+              <input
+                class="form-control"
+                type="password"
+                name="password"
+                id="password"
+                placeholder="password"
+                required
+              />
+              <button class="fresh-btn mt-4" type="submit">Login</button>
+
+              <p class="mt-5">Don't have an account? <a href="register.html">Register</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+    {{ render_js(render) }}
+  </body>
+</html>

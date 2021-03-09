@@ -1,0 +1,92 @@
+{% from "base.html" import render_css, render_js, render_navbar %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{ render_css(render) }}
+    <title>Register</title>
+  </head>
+
+  <!-- <div class="col"> -->
+  <!-- <div class="col-md-2">
+            <img src="../static/images/bg2.jpg" alt="" width="100%">
+            
+          </div> -->
+
+  <body id="body">
+  <section class="top">
+    {{ render_navbar(render) }}
+    <section id="setup">
+      <div class="form-container container mt-5">
+          <h1 class="mb-3">Create <br> a new<span class="yellow"> Account</span></h1>
+        <div class="row md">
+          <div class="col align-self-center">
+            <form action="{{ url_for('auth.register') }}" method="post">
+              <input
+                class="form-control"
+                type="text"
+                name="firstname"
+                id="firstname"
+                placeholder="firstname"
+                required
+              />
+              <input
+                class="form-control"
+                type="text"
+                name="lastname"
+                id="lastname"
+                placeholder="lastname"
+                required
+              />
+              <input
+                class="form-control"
+                type="text"
+                name="username"
+                id="username"
+                placeholder="username"
+                required
+              />
+              <input
+                class="form-control"
+                type="password"
+                name="password"
+                id="password"
+                placeholder="password"
+                required
+              />
+
+              <input
+                class="form-control"
+                type="text"
+                name="city"
+                id="city"
+                placeholder="city"
+                required
+              />
+
+              <input
+                class="form-control"
+                type="text"
+                name="location"
+                id="location"
+                placeholder="location"
+                required
+              />
+              <button class="fresh-btn mt-4" type="submit">Register</button>
+
+              <p class="mt-5">Already have an account? <a href="login.html">Login</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+    {{ render_js(render) }}
+  </body>
+</html>
+
+
+<script src="../static/js/location.js"></script>

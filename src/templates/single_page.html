@@ -1,0 +1,53 @@
+{% from "base.html" import render_css, render_js, render_navbar %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chefs</title>
+    {{ render_css(render) }}
+  </head>
+  <body id="body">
+    <section class="top1">
+      {{ render_navbar(render) }}
+
+      <div class="container">
+        <div class="container my-5">
+          <div class="container list mt-5">
+            <div class="row">
+              <div class="col-md f">
+                <div class="card card-product">
+                  <img
+                    class="chef-img col-md"
+                    src="../static/images/chef.jpg"
+                    alt="chef-image"
+                  />
+                  <div class="card-body">
+                    <h3>
+                      {{cheffservice.cheffservice.firstname}}
+                      {{cheffservice.cheffservice.lastname}}
+                    </h3>
+                    <!-- <h5 class="text-center">
+                      user id: {{cheffservice.posted_by_id}}
+                    </h5> -->
+                    <!-- <p>service id: {{cheffservice.id}}</p> -->
+                    <p>price: &#x20A6;{{cheffservice.cheff_price}}</p>
+                    <p>description: {{cheffservice.cheff_description}}</p>
+                    <p>city: {{cheffservice.city}}</p>
+                    <a
+                      href="{{url_for('chefs.single_page', id=cheffservice.id)}}"
+                      >contact</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+
+  {{ render_js(render) }}
+</html>
