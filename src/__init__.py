@@ -4,7 +4,6 @@ from .extensions import db, login_manager
 from .routes.main import main
 from .routes.auth import auth
 from .routes.chefs import chefs
-from .routes.locator import locator
 import os
 from .models import User, Cheffservice
 
