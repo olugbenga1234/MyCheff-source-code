@@ -28,7 +28,6 @@ def create_app(config_file='setting.py'):
         return User.query.get(user_id)
 
     app.register_blueprint(main)
-    app.register_blueprint(locator)
     app.register_blueprint(auth)
     app.register_blueprint(chefs)
 
