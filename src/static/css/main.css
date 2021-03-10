@@ -546,4 +546,8 @@ textarea {
     background: none;
     border: none;
   }
+
+  .chef-img{
+    max-width: 300px;
+  }
 }
