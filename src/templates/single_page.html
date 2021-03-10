@@ -1,4 +1,4 @@
-{% from "base.html" import render_css, render_js, render_navbar %}
+{% from "base.html" import render_css, render_js, render_navbar, render_owl %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,45 +9,74 @@
     {{ render_css(render) }}
   </head>
   <body id="body">
-    <section class="top1">
+    <section class="single">
       {{ render_navbar(render) }}
 
+      <div class="col text-center mt-5">
+        <h1 style="text-transform: uppercase;">
+          {{cheffservice.cheffservice.firstname}}
+          {{cheffservice.cheffservice.lastname}}
+        </h1>
+        <p>{{cheffservice.city}}</p>
+      </div>
+    
+
+    <div class="container mt-5 mb-5">
       <div class="container">
-        <div class="container my-5">
-          <div class="container list mt-5">
-            <div class="row">
-              <div class="col-md f">
-                <div class="card card-product">
-                  <img
-                    class="chef-img col-md"
-                    src="../static/images/chef.jpg"
-                    alt="chef-image"
-                  />
-                  <div class="card-body">
-                    <h3>
-                      {{cheffservice.cheffservice.firstname}}
-                      {{cheffservice.cheffservice.lastname}}
-                    </h3>
-                    <!-- <h5 class="text-center">
-                      user id: {{cheffservice.posted_by_id}}
-                    </h5> -->
-                    <!-- <p>service id: {{cheffservice.id}}</p> -->
-                    <p>price: &#x20A6;{{cheffservice.cheff_price}}</p>
-                    <p>description: {{cheffservice.cheff_description}}</p>
-                    <p>city: {{cheffservice.city}}</p>
-                    <a
-                      href="{{url_for('chefs.single_page', id=cheffservice.id)}}"
-                      >contact</a
-                    >
-                  </div>
-                </div>
+        <div class="row">
+          <div class="col-md">
+            <img
+              class="chef-img col-md"
+              src="../static/images/chef/chef (1).jpg"
+              alt="chef-image"
+            />
+          </div>
+
+          <div class="col-md-6 mt-5">
+            <h5 class="mb-5">{{cheffservice.cheff_description}}</h5>
+            <div class="owl-carousel owl-theme mb-5">
+              <div class="item"><img src="../static/images/foods/food1.jpg" alt="food1"></div>
+              <div class="item"><img src="../static/images/foods/food2.jpg" alt="food2"></div>
+              <div class="item"><img src="../static/images/foods/food3.jpg" alt="food3"></div>
+              <div class="item"><img src="../static/images/foods/food4.jpg" alt="food4"></div>
+              <div class="item"><img src="../static/images/foods/food1.jpg" alt="food5"></div>
+              <div class="item"><img src="../static/images/foods/food1.jpg" alt="food6"></div>
+            </div>
+
+            <div class="contact">
+              <div class="mb-5">
+                <h3>Contact</h3>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <button class="normal-btn mt-3" type="submit">send</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
   </body>
 
-  {{ render_js(render) }}
+  {{ render_owl(render) }} {{ render_js(render) }}
+  <script>
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      // autoWidth:true,
+      responsiveClass:true,
+      items: 3,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        600: {
+          items: 3,
+        },
+        1000: {
+          items: 5,
+        },
+      },
+    });
+  </script>
 </html>

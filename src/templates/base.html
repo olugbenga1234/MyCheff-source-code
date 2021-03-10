@@ -12,6 +12,8 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"
 />
+<link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+<link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
 {% endmacro %}
 <!---->
 {% macro render_js(render) %}
@@ -86,5 +88,10 @@
     </div>
   </div>
 </section>
+{% endmacro %}
 
+{% macro render_owl(render) %}
+<!-- owl carousel js -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../static/js/owl.carousel.min.js"></script>
 {% endmacro %}

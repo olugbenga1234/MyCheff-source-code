@@ -23,3 +23,39 @@
       </div>
       {% endfor %}
     </div>
+
+
+
+
+    <div class="container list mt-5">
+      <div class="row">
+        <div class="col-md f">
+          <div class="card card-product">
+            <img
+              class="chef-img col-md"
+              src="../static/images/chef.jpg"
+              alt="chef-image"
+            />
+            <div class="card-body">
+              <h3>
+                {{cheffservice.cheffservice.firstname}}
+                {{cheffservice.cheffservice.lastname}}
+              </h3>
+              <!-- <h5 class="text-center">
+                user id: {{cheffservice.posted_by_id}}
+              </h5> -->
+              <!-- <p>service id: {{cheffservice.id}}</p> -->
+              <p>price: &#x20A6;{{cheffservice.cheff_price}}</p>
+              <p>description: {{cheffservice.cheff_description}}</p>
+              <p>city: {{cheffservice.city}}</p>
+              <a
+                href="{{url_for('chefs.single_page', id=cheffservice.id)}}"
+                >contact</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   

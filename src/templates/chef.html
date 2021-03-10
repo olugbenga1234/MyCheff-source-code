@@ -9,7 +9,7 @@
     {{ render_css(render) }}
   </head>
   <body id="body">
-    <section class="top1">
+    <section class="top4">
       {{ render_navbar(render) }}
 
       <div class="container">
@@ -47,28 +47,36 @@
           </form>
 
           <div class="container list mt-5">
-            <div class="row">
+            <div class="row justify-content-center">
               {% for cheffservice in cheffservice.items %}
-
-              <div class="col-md f">
-                <div class="card card-product">
-                  <img class="chef-img col-md" src="../static/images/chef.jpg" alt="chef-image"/>
-                  <div class="card-body">
-                    <h3>
-                      {{cheffservice.cheffservice.firstname}}
-                      {{cheffservice.cheffservice.lastname}}
-                    </h3>
-                    <h5 class="text-center">
-                      user id: {{cheffservice.posted_by_id}}
-                    </h5>
-                    <p>service id: {{cheffservice.id}}</p>
-                    <p>price: &#x20A6;{{cheffservice.cheff_price}}</p>
-                    <p>description: {{cheffservice.cheff_description}}</p>
-                    <p>city: {{cheffservice.city}}</p>
-                    <a href="{{url_for('chefs.single_page', id=cheffservice.id)}}">contact</a>
-                  </div>
+              <div class="card" style="width: 18rem">
+                <img
+                  src="../static/images/chef/chef (1).jpg"
+                  class="card-img-top mt-3 mb-1"
+                  alt="chef-image"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    {{cheffservice.cheffservice.firstname}}
+                    {{cheffservice.cheffservice.lastname}}
+                  </h5>
+                  <p class="card-text card-city">{{cheffservice.city}}</p>
+                  <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                 <div class="row justify-content-center mt-5">
+                   <div class="col price">
+                    ${{cheffservice.cheff_price}}
+                   </div>
+                   <div class="col">
+                    <a
+                    href="{{url_for('chefs.single_page', id=cheffservice.id)}}"
+                    class="small-btn"
+                    >Profile</a
+                  >
+                   </div>
+                 </div>
                 </div>
               </div>
+
               {% endfor %}
             </div>
           </div>
