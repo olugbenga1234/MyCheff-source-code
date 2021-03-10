@@ -12,6 +12,8 @@ pylint-flask = "*"
 opencage = "*"
 geopy = "*"
 gunicorn = "*"
+psycopg2-binary = "*"
+psycopg2 = "*"
 
 [dev-packages]
 
