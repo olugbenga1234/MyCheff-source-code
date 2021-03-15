@@ -1,5 +1,5 @@
 from flask import Flask
-from .commands import create_tables
+from .commands import create_tables#, users
 from .extensions import db, login_manager
 from .routes.main import main
 from .routes.auth import auth
@@ -42,5 +42,6 @@ def create_app(config_file='setting.py'):
 
 
     app.cli.add_command(create_tables)
+    #app.cli.add_command(users)
 
     return app

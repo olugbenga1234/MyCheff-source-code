@@ -8,7 +8,8 @@
   src: url(../fonts/gilori/Gilroy-Light.otf);
 }
 
-body, html{
+body,
+html {
   height: 100%;
 }
 
@@ -437,6 +438,16 @@ textarea {
 
 /* chef style end */
 
+.beta {
+  background: green;
+  border-radius: 100px;
+  font-size: 20px;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  align-items: center;
+}
+
 /**responsive**/
 .bi-list {
   width: 28px;
@@ -549,7 +560,7 @@ textarea {
     border: none;
   }
 
-  .chef-img{
+  .chef-img {
     max-width: 300px;
   }
 }
