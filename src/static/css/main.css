@@ -14,7 +14,6 @@ html {
 }
 
 #body {
-  font-family: GiloriBold;
   text-decoration: none !important;
 }
 
@@ -22,6 +21,11 @@ html {
   display: flex;
   align-items: center;
   padding: 20px;
+}
+
+.navbar-brand{
+  font-family: GiloriBold;
+  font-weight: bolder;
 }
 
 nav {
