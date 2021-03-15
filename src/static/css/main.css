@@ -8,6 +8,10 @@
   src: url(../fonts/gilori/Gilroy-Light.otf);
 }
 
+body, html{
+  height: 100%;
+}
+
 #body {
   font-family: GiloriBold;
   text-decoration: none !important;
@@ -90,13 +94,11 @@ a {
 }
 
 .top4 {
-  /* width: 100%;*/
   height: 100%;
   background-image: url(../images/bg7.jpg) !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
 }
 
 .top1 {
